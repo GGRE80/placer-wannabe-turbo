@@ -65,10 +65,11 @@ Give a brief site summary including:
 - Anchor co-tenancy or notable patterns
 """
     response = client.chat.completions.create(
-        model="gpt-4-turbo",
+        model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7
     )
+    st.session_state["last_token_usage"] = response.usage.total_tokens
     return response.choices[0].message.content.strip()
 
 st.title("📍 Placer Wannabe – CRE Site Analyzer")
@@ -94,3 +95,6 @@ if st.button("Analyze Site"):
             st.subheader("🧠 AI Site Summary")
             summary = generate_summary(address, places, demographics, traffic_score)
             st.write(summary)
+
+            if "last_token_usage" in st.session_state:
+                st.info(f"🧾 Estimated OpenAI token usage for this request: {st.session_state['last_token_usage']} tokens")
