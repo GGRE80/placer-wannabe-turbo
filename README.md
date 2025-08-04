@@ -1,3 +1,3 @@
-# Placer Wannabe with Usage Tracker
+# Placer Wannabe Turbo – CRE Analyzer with Traffic
 
-Includes basic OpenAI token usage tracking.
+Includes Google Maps embed, HERE traffic data, demographic and business analysis, and AI summary.
