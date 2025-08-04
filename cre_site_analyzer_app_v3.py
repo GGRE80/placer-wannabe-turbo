@@ -2,7 +2,7 @@
 import streamlit as st
 from utils import get_here_traffic_data_v7
 
-st.title("CRE Site Analyzer - HERE Traffic v7 Enabled")
+st.title("CRE Site Analyzer - HERE Traffic v7 Final Fix")
 
 address = st.text_input("Enter a property address:")
 

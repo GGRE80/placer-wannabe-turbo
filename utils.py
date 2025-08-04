@@ -9,8 +9,7 @@ def get_here_traffic_data_v7(lat, lon, here_api_key):
 
     url = "https://data.traffic.hereapi.com/v7/flow"
     params = {
-        "in": f"boundingBox:{bottom},{left},{top},{right}",
-        "locationReferencing": "shape",
+        "bbox": f"{bottom},{left},{top},{right}",
         "apikey": here_api_key
     }
 
